@@ -29,13 +29,15 @@ def message(message):
         elif message.text == 'вызвать официанта':
            bot.send_message(chat_id=adm_chat, text='новый заказ блять')
            bot.send_message(message.chat.id, 'офик скоро подойдет')
+        elif message.text == 'связаться с руководителем':
+            bot.send_message(message.chat.id, 'а почему блять тут не рабоатет??????')
            
-
+'''
 @bot.message_handler(func=lambda message: True)
 def calldirector(message):
     if message.chat.type == 'private':
         if message.text == 'связаться с руководителем':
-            bot.send_message(message.chat.id, 'а почему блять тут не рабоатет??????')
+            bot.send_message(message.chat.id, 'а почему блять тут не рабоатет??????')'''
 
 
 bot.polling(none_stop = True)
