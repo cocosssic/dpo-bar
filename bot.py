@@ -7,7 +7,7 @@ bot = telebot.TeleBot(TOKEN)
 
 
 markupOtmena = types.ReplyKeyboardMarkup(resize_keyboard=True)
-btnOtmena = types.KeyboardButton('Отмена')
+btnOtmena = types.KeyboardButton('Назад')
 
 markupOtmena.add(btnOtmena)
 
@@ -59,6 +59,8 @@ def message(message):
         elif message.text == 'оставить отзыв':
             bot.send_message(message.chat.id, 'напишите сюда свой отзыв',reply_markup=markupOtmena)
             bot.send_message(chat_id=-1001796534245, text=message.text)
+        elif message.text == 'Назад':
+            bot.send_message(message.chat.id,'Главное меню',reply_markup =markupMainMenu)
 
 
 
