@@ -6,6 +6,11 @@ TOKEN = '5141314522:AAFeMxB81EAKacxB-VjUyhV8KIoYIQi_Zqg'
 bot = telebot.TeleBot(TOKEN)
 
 
+markupLoyalnost= types.ReplyKeyboardMarkup(resize_keyboard=True)
+btnSaleCard = types.KeyboardButton('Скидочная карта')
+btnNazad = types.KeyboardButton('Назад')
+markupLoyalnost.add(btnSaleCard,btnNazad)
+
 markupOtmena = types.ReplyKeyboardMarkup(resize_keyboard=True)
 btnOtmena = types.KeyboardButton('Назад')
 
@@ -23,21 +28,24 @@ btnBack = types.KeyboardButton('Отмена')
 
 markupTableNumber.add(btnTablenumber1,btnTablenumber2,btnTablenumber3,btnTablenumber4,btnTablenumber5,btnTablenumber6,btnBack)
 
+
 markupMainMenu = types.ReplyKeyboardMarkup(resize_keyboard=True)
 item1 = types.KeyboardButton('меню')
 item2 = types.KeyboardButton('наши мероприятия')
 item3 = types.KeyboardButton('оставить отзыв')
 item4 = types.KeyboardButton('доставка')
 item5 = types.KeyboardButton('вызвать официанта')
+item6 = types.KeyboardButton('Программа лояльности')
+item7 = types.KeyboardButton('Путь к нам')
 
-markupMainMenu.add(item1, item2, item3, item4, item5)
+markupMainMenu.add(item1, item2, item3, item4, item5, item6, item7)
 
 @bot.message_handler(commands=['start'])
 def start (message):
     bot.send_message(message.chat.id, 'приввет, {0.first_name}'.format(message.from_user), reply_markup = markupMainMenu)
 
 @bot.message_handler(content_types=['text'])
-def message(message):
+def osnova(message):
     if message.chat.type == 'private':
         #меню
         if message.text == 'меню':
@@ -61,7 +69,22 @@ def message(message):
             bot.send_message(chat_id=-1001796534245, text=message.text)
         elif message.text == 'Назад':
             bot.send_message(message.chat.id,'Главное меню',reply_markup =markupMainMenu)
+        elif message.text == 'Путь к нам':
+            bot.send_message(message.chat.id,'Наш адрес: \nПолитехническая 6')
+            bot.send_location(message.chat.id,latitude= 59.99323, longitude = 30.35611)
+        elif message.text == 'Программа лояльности':
+            bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = markupLoyalnost,)
+        elif message.text == 'Скидочная карта':
+            bot.send_message(message.chat.id,'что то написать надо')
 
 
+def text(message):
+    if message.text == 'Программа лояльности':
+        bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = markupLoyalnost,)
+    elif message.text == 'Скидочная карта':
+        bot.send_message(message.chat.id,'что то написать надо')
+    elif message.text == soobshenie:
+        bot.send_message(chat_id=-1001796534245, text=message.text)
+    
 
 bot.polling(none_stop = True)
