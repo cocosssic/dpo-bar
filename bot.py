@@ -26,38 +26,37 @@ def OsnovnoeMenu(message):
         elif message.text == 'Путь к нам':
             bot.send_message(message.chat.id,'Наш адрес: \nПолитехническая 6')
             bot.send_location(message.chat.id,latitude= 59.99323, longitude = 30.35611)
-
-
-def ViborStola(message):
-    if message.text == 'стол номер 1':
-        bot.send_message(chat_id=-1001796534245, text=message.text)
-        bot.send_message(message.chat.id, 'официант скоро подойдет')
-    elif message.text == '2':
-        bot.send_message(chat_id=-1001796534245, text=message.text)
-        bot.send_message(message.chat.id, 'официант скоро подойдет')
-    elif message.text == '3':
-        bot.send_message(chat_id=-1001796534245, text=message.text)
-        bot.send_message(message.chat.id, 'официант скоро подойдет')
-    elif message.text == '4':
-        bot.send_message(chat_id=-1001796534245, text=message.text)
-        bot.send_message(message.chat.id, 'официант скоро подойдет')
-    elif message.text == '5':
-        bot.send_message(chat_id=-1001796534245, text=message.text + 'счет')
-        bot.send_message(message.chat.id, 'официант скоро подойдет')
-    elif message.text == 'Отмена':
-        bot.send_message(message.chat.id,'Вызов персонала отменен',reply_markup = nav.markupMainMenu)
-    elif message.text == 'оставить отзыв':
-        bot.send_message(message.chat.id, 'напишите сюда свой отзыв',reply_markup=nav.markupOtmena)
-        bot.send_message(chat_id=-1001796534245, text=message.text)
-    elif message.text == 'Назад':
-        bot.send_message(message.chat.id,'Главное меню',reply_markup = nav.markupMainMenu)
-    elif message.text == 'Путь к нам':
-        bot.send_message(message.chat.id,'Наш адрес: \nПолитехническая 6')
-        bot.send_location(message.chat.id,latitude= 59.99323, longitude = 30.35611)
-    elif message.text == 'Программа лояльности':
-        bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = nav.markupLoyalnost,)
-    elif message.text == 'Скидочная карта':
-        bot.send_message(message.chat.id,'что то написать надо')
+        elif message.text == 'Программа лояльности':
+            bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = nav.markupLoyalnost,)
+        if message.text == 'стол номер 1':
+            bot.send_message(chat_id=-1001796534245, text=message.text)
+            bot.send_message(message.chat.id, 'официант скоро подойдет')
+        elif message.text == '2':
+            bot.send_message(chat_id=-1001796534245, text=message.text)
+            bot.send_message(message.chat.id, 'официант скоро подойдет')
+        elif message.text == '3':
+            bot.send_message(chat_id=-1001796534245, text=message.text)
+            bot.send_message(message.chat.id, 'официант скоро подойдет')
+        elif message.text == '4':
+            bot.send_message(chat_id=-1001796534245, text=message.text)
+            bot.send_message(message.chat.id, 'официант скоро подойдет')
+        elif message.text == '5':
+            bot.send_message(chat_id=-1001796534245, text=message.text + 'счет')
+            bot.send_message(message.chat.id, 'официант скоро подойдет')
+        elif message.text == 'Отмена':
+            bot.send_message(message.chat.id,'Вызов персонала отменен',reply_markup = nav.markupMainMenu)
+        elif message.text == 'оставить отзыв':
+            bot.send_message(message.chat.id, 'напишите сюда свой отзыв',reply_markup=nav.markupOtmena)
+            bot.send_message(chat_id=-1001796534245, text=message.text)
+        elif message.text == 'Назад':
+            bot.send_message(message.chat.id,'Главное меню',reply_markup = nav.markupMainMenu)
+        elif message.text == 'Путь к нам':
+            bot.send_message(message.chat.id,'Наш адрес: \nПолитехническая 6')
+            bot.send_location(message.chat.id,latitude= 59.99323, longitude = 30.35611)
+        elif message.text == 'Программа лояльности':
+            bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = nav.markupLoyalnost,)
+        elif message.text == 'Скидочная карта':
+            bot.send_message(message.chat.id,'что то написать надо')
 
 
 def text(message):
