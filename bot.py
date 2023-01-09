@@ -29,6 +29,7 @@ def OsnovnoeMenu(message):
         elif message.text == 'Программа лояльности':
             bot.send_message(message.chat.id,'Условия программы лояльности',reply_markup = nav.markupLoyalnost,)
         if message.text == 'стол номер 1':
+            bot.send_message(message.chat.id, 'напишите что вам нужно :\nсчет,позвать официанта ,позвать кальянщика')
             bot.send_message(chat_id=-1001796534245, text=message.text)
             bot.send_message(message.chat.id, 'официант скоро подойдет')
         elif message.text == '2':
