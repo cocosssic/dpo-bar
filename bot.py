@@ -23,6 +23,10 @@ def OsnovnoeMenu(message):
         #вызвать официанта
         elif message.text == 'вызвать официанта':
             bot.send_message(message.chat.id, 'выберете столик', reply_markup = nav.markupTableNumber)
+        elif message.text == 'Путь к нам':
+            bot.send_message(message.chat.id,'Наш адрес: \nПолитехническая 6')
+            bot.send_location(message.chat.id,latitude= 59.99323, longitude = 30.35611)
+
 
 def ViborStola(message):
     if message.text == 'стол номер 1':
